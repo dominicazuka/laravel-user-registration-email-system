@@ -53,5 +53,5 @@ This project is a coding test and, as such, does not implement CSRF protection i
 For any questions or clarifications, please reach out to the project developer:
 
 **Developer:** Dominic Azuka
-**Email:** [visitdominicazuka@gmail.com]([v](mailto:visitdominicazuka@gmail.com)visitdominicazuka@gmail.com)
+**Email:** [visitdominicazuka@gmail.com](mailto:visitdominicazuka@gmail.com)
 **GitHub:** [github.com/dominicazuka](github.com/dominicazuka)

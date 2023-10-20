@@ -9,11 +9,11 @@
         </p>
     </header>
 
-    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+    <form id="send-verification" method="post" action="{{ route('verification.send') }}" >
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -45,6 +45,24 @@
                     @endif
                 </div>
             @endif
+        </div>
+
+        {{-- image --}}<br>
+        <div class="row mb-3">
+            <x-input-label for="image" :value="__('Profile Image')" />
+            <div class="col-sm-10">
+                <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" required accept=".jpeg,.png,.jpg"
+                />
+                <x-input-error :messages="$errors->get('image')" class="mt-2" />
+            </div>
+        </div>
+
+        {{-- display image --}}<br>
+        <div class="row mb-3">
+            <label for="profile_image" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <img class="rounded avatar-lg" id="showImage" src="{{ !empty($user->image) ? url($user->image) : url('upload/anonymous.png') }}" alt="Profile Image" style="width: 100px; height:100px;">
+            </div>
         </div>
 
         <div class="flex items-center gap-4">
